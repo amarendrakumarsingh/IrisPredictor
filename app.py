@@ -19,10 +19,13 @@ def predict():
     petal_length = float(request.form['petal_length'])
     petal_width = float(request.form['petal_width'])
     finalFeatures = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
-    species = list(model.predict(features))[0]
-    msg = 'Expected Species is : ' + species
+#     species = list(model.predict(features))[0]
+#     msg = 'Expected Species is : ' + species
+    
+    prediction = model.predict(finalFeatures)
 
-    return render_template('index.html', prediction_text=msg)
+#     return render_template('index.html', prediction_text=msg)
+    return render_template('index.html', prediction_text='Predicted Results: {}'.format(prediction))
 
 
 if __name__ == "__main__":
