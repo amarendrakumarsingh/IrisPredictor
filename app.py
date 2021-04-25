@@ -25,7 +25,11 @@ def predict():
     prediction = model.predict(finalFeatures)
 
 #     return render_template('index.html', prediction_text=msg)
-    return render_template('index.html', prediction_text='Predicted Results: {}'.format(prediction))
+#     return render_template('index.html', prediction_text='Predicted Results: {}'.format(prediction))
+    return render_template('index.html', prediction_text='Predicted Results: {}'.format(prediction[0]))
+
+#     return render_template('index.html', prediction_text=prediction[0])
+
 
 
 if __name__ == "__main__":
