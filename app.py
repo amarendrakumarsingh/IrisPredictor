@@ -3,8 +3,8 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('IrisPredictor.h5', 'rb'))
-ohe = pickle.load(open('IrisSpeciesEncoder.h5','rb'))
+model = pickle.load(open('IrisPredictor.pkl', 'rb'))
+ohe = pickle.load(open('IrisEncoder.pkl','rb'))
 
 @app.route('/')
 def home():
