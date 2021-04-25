@@ -21,7 +21,7 @@ def predict():
     finalFeatures = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
     prediction = model.predict(finalFeatures)
 
-    return render_template('index.html', prediction_text='Expected Class is : '.prediction)
+    return render_template('index.html', prediction_text='Expected Class is : ' + prediction)
 
 
 if __name__ == "__main__":
