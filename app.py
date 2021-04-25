@@ -4,7 +4,6 @@ import pickle
 
 app = Flask(__name__)
 model = pickle.load(open('IrisPredictor.pkl', 'rb'))
-ohe = pickle.load(open('IrisEncoder.pkl','rb'))
 
 @app.route('/')
 def home():
@@ -22,9 +21,7 @@ def predict():
     finalFeatures = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
     prediction = model.predict(finalFeatures)
 
-    
-
-    return render_template('index.html', prediction_text='Expected Class is  $ {}'.format(round(prediction[0][0])))
+    return render_template('index.html', prediction_text='Expected Class is : '.prediction)
 
 
 if __name__ == "__main__":
